@@ -4,9 +4,23 @@
     box-sizing: border-box;
 }
 
+:root {
+    --primary-clr: #1aeab6;
+}
+
+a {
+    text-decoration: none;
+    color: initial;
+}
+
 body {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    background: #eee;
+    background-image: linear-gradient(to left, #eee, #eee 60%, var(--primary-clr), var(--primary-clr) 40%);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    overflow: hidden;
+
+    font-family: 'Poppins', sans-serif;
 }
 
 main {
@@ -16,60 +30,82 @@ main {
     margin: auto;
     margin-top: 10vh;
 
-    /* border: 1px solid black; */
 
     display: flex;
-    /* justify-content: space-around; */
+    justify-content: space-around;
     align-items: center;
 
     box-shadow: 0 0 20px #4446;
+    position: relative;
 }
 
 .logo {
     width: 40%;
-    height: 100%;
-    background: rgb(79, 240, 191);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.login {
-    width: 50%;
-    margin: auto;
-    padding: 10%;
-}
-
-.login > h2 {
     text-align: center;
 }
 
-.login > form {
+.logo p {
+    padding: 1rem;
+    font-weight: 700;
+}
+
+.login {
+    width: 60%;
+    margin: auto;
+}
+
+.need-help {
+    position: absolute;
+    top: 0.7rem;
+    right: 0.7rem;
+}
+
+.login h2 {
+    text-align: center;
+}
+
+.login form{
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
-form > a {
+.login form input{
+    width: 80%;
+    height: 2rem;
+    font-size: 1.2rem;
+    padding: 0 0.4rem;
+}
+
+input:focus, input:active {
+    border: 1px solid gray;
+    outline: none;
+}
+
+label {
+    margin: 1rem 0 0.5rem;
+    align-self: flex-start;
+    margin-left: 10%;
+    font-weight: 600;
+}
+
+form a {
     align-self: flex-end;
-}
-
-form > * {
-    margin: 10px;
+    top: 1rem;
+    right: 10%;
+    position: relative;
 }
 
 .btn {
-    width: 40%;
-    margin: auto;
-    padding: 0.4rem 0.8rem;
-}
+    margin-top: 3rem;
+    background: var(--primary-clr);
+    font-weight: 600;
+    border: none;
+    border-radius: 0.3rem;
+    -webkit-border-radius: 0.3rem;
+    -moz-border-radius: 0.3rem;
+    -ms-border-radius: 0.3rem;
+    -o-border-radius: 0.3rem;
 
-.rect {
-    z-index: -1;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    width: 46%;
-    background-color: rgb(80, 240, 191);
+    cursor: pointer;
 }
